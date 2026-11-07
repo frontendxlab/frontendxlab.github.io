@@ -3,26 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrontendXLab - Developer Tools, AI Platforms &amp; Open Source Libraries</title>
-  <meta name="description" content="FrontendXLab builds high-performance developer tools, AI-powered interview platforms, tree-shakable algorithm libraries, and browser runtime environments.">
-  <meta name="keywords" content="FrontendX, frontend interview prep, developer tools, dsa-js, agent-ui, medicons, opencode visual inspector, opencode computer use, webc, browser compiler, frontend engineering">
+  <title>FrontendXLab - Developer Tools, Autonomous Systems &amp; Open Source Libraries</title>
+  <meta name="description" content="FrontendXLab engineers high-performance developer tooling, browser runtime sandboxes, tree-shakable algorithmic engines, and AI-accelerated interview platforms.">
+  <meta name="keywords" content="FrontendX, FrontendXLab, developer tools, WebC, OpenCode visual inspector, OpenCode computer use, dsa-js, agent-ui, medicons, GooUI, frontend engineering">
   <meta name="author" content="FrontendXLab">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://frontendxlab.dev">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://frontendxlab.dev">
-  <meta property="og:title" content="FrontendXLab - Developer Tools, AI Platforms &amp; Open Source Libraries">
-  <meta property="og:description" content="Explore FrontendXLab: Flagship AI interview prep, autonomous developer tools, browser execution sandboxes, and modern UI component systems.">
+  <meta property="og:title" content="FrontendXLab - Developer Tools &amp; Open Source Libraries">
+  <meta property="og:description" content="Engineered for modern frontend teams: client-side browser runtimes, autonomous developer tools, and tree-shakable algorithm engines.">
   <meta property="og:site_name" content="FrontendXLab">
   <meta property="og:image" content="https://frontendxlab.dev/og-image.png">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://frontendxlab.dev">
-  <meta name="twitter:title" content="FrontendXLab - Developer Tools, AI Platforms &amp; Open Source Libraries">
-  <meta name="twitter:description" content="Explore FrontendXLab: Flagship AI interview prep, autonomous developer tools, browser execution sandboxes, and modern UI component systems.">
+  <meta name="twitter:title" content="FrontendXLab - Developer Tools &amp; Open Source Libraries">
+  <meta name="twitter:description" content="Engineered for modern frontend teams: client-side browser runtimes, autonomous developer tools, and tree-shakable algorithm engines.">
   <meta name="twitter:image" content="https://frontendxlab.dev/og-image.png">
+
+  <!-- Fonts: Geist (body) & Montserrat Alternates (display headings) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&amp;family=Montserrat+Alternates:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,376 +38,377 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ["\"Plus Jakarta Sans\"", "system-ui", "sans-serif"],
+            sans: ['"Geist"', 'system-ui', 'sans-serif'],
+            display: ['"Montserrat Alternates"', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
           },
           colors: {
-            navy: {
-              950: "#060813",
-              900: "#0a0d1f",
-              850: "#0f142c",
-            }
+            bg: '#000000',
+            elevated: '#0A0A0A',
+            surface: '#121212',
+            surfaceHover: '#171717',
+            surfaceCard: '#1A1A1A',
+            primary: '#EBEBEB',
+            muted: '#A1A1A1'
           }
         }
       }
     };
   </script>
+
   <style>
+    :root {
+      --bg: #000000;
+      --bg-elevated: #0A0A0A;
+      --bg-surface: #121212;
+      --bg-hover: #171717;
+      --border: rgba(235, 235, 235, 0.1);
+      --border-subtle: rgba(235, 235, 235, 0.05);
+      --text: #EBEBEB;
+      --text-secondary: rgba(235, 235, 235, 0.7);
+      --text-muted: rgba(235, 235, 235, 0.45);
+      --accent: #A1A1A1;
+      --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    * { box-sizing: border-box; }
     body {
-      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-      background-color: #070913;
-      color: #f1f5f9;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Geist", system-ui, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .bg-grid-ambient {
-      background-size: 36px 36px;
+    ::selection {
+      background: rgba(235, 235, 235, 0.2);
+      color: #FFFFFF;
+    }
+    .bg-grid-glowfly {
+      background-size: 40px 40px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(235, 235, 235, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(235, 235, 235, 0.03) 1px, transparent 1px);
     }
-    .ease-spring {
-      transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    .hero-glow-spot {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(120px);
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.01) 70%, transparent 100%);
+    }
+    .glass-pill {
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(235, 235, 235, 0.1);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    .glow-card {
+      position: relative;
+      background: #0A0A0A;
+      border: 1px solid rgba(235, 235, 235, 0.08);
+      border-radius: 1rem;
+      transition: border-color 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), background-color 0.4s var(--ease-spring);
+    }
+    .glow-card:hover {
+      border-color: rgba(235, 235, 235, 0.22);
+      background-color: #121212;
+      transform: translateY(-2px);
+    }
+    .illuminate-word {
+      display: inline-block;
+      opacity: 0.18;
+      transform: translateY(4px);
+      transition: opacity 0.65s var(--ease-spring), transform 0.65s var(--ease-spring);
+      will-change: opacity, transform;
+    }
+    .illuminate-word.is-lit {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .build-card {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: opacity 0.85s var(--ease-spring), transform 0.85s var(--ease-spring);
+      will-change: opacity, transform;
+    }
+    .build-card.is-built {
+      opacity: 1;
+      transform: translateY(0);
     }
     .reveal {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+      will-change: opacity, transform;
     }
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
-    .icon {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .faq-item {
+      border: 1px solid rgba(235, 235, 235, 0.08);
+      background: #0A0A0A;
+      border-radius: 0.875rem;
+      transition: border-color 0.3s var(--ease-spring), background-color 0.3s var(--ease-spring);
     }
-    .card-shell {
-      border-radius: 1rem;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-      padding: 1px;
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-      transition: background 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    .faq-item:hover {
+      border-color: rgba(235, 235, 235, 0.18);
     }
-    .card-shell:hover {
-      background: linear-gradient(180deg, rgba(6, 182, 212, 0.35) 0%, rgba(255, 255, 255, 0.06) 100%);
-    }
-    .card-core {
-      border-radius: calc(1rem - 1px);
-      background-color: rgba(11, 15, 30, 0.94);
-      padding: 1.5rem;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card-shell:hover .card-core {
-      background-color: rgba(15, 21, 42, 0.98);
-    }
-    .card-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 0.625rem;
-      background-color: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #22d3ee;
-      margin-bottom: 1rem;
-      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card-shell:hover .card-icon {
-      transform: scale(1.05);
-    }
-    .card-icon-sm {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 0.5rem;
-      background-color: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #22d3ee;
-      flex-shrink: 0;
-    }
-    .card-tag {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: #94a3b8;
-      display: inline-block;
-    }
-    .card-action {
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #22d3ee;
-      transition: color 0.2s;
-    }
-    .card-link:hover {
-      color: #67e8f9;
-    }
-    .card-meta {
-      font-size: 11px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      color: #94a3b8;
-    }
-    .faq-shell {
-      border-radius: 1rem;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
-      padding: 1px;
+    .faq-item[open] {
+      background: #111111;
+      border-color: rgba(235, 235, 235, 0.2);
     }
     .faq-summary {
-      border-radius: calc(1rem - 1px);
-      background-color: rgba(11, 15, 30, 0.94);
-      padding: 1.5rem;
       cursor: pointer;
       list-style: none;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 1.25rem 1.5rem;
       user-select: none;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #ffffff;
+      font-weight: 600;
+      color: #EBEBEB;
     }
     .faq-summary::-webkit-details-marker { display: none; }
-    .faq-summary:hover { color: #67e8f9; }
-    .faq-icon {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 9999px;
-      background-color: rgba(255, 255, 255, 0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #94a3b8;
-      transition: transform 0.2s, color 0.2s;
-      flex-shrink: 0;
-      margin-left: 1rem;
+    .faq-content {
+      padding: 0 1.5rem 1.25rem 1.5rem;
+      color: rgba(235, 235, 235, 0.7);
+      font-size: 0.9375rem;
+      line-height: 1.65;
     }
-    details[open] .faq-icon {
-      transform: rotate(180deg);
-      color: #22d3ee;
+    .terminal-box {
+      background: #080808;
+      border: 1px solid rgba(235, 235, 235, 0.12);
+      border-radius: 0.875rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
     }
-    .faq-body {
-      padding: 1rem 1.5rem 1.5rem;
-      font-size: 0.875rem;
-      color: #cbd5e1;
-      line-height: 1.625;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    @media (prefers-reduced-motion: reduce) {
+      .illuminate-word, .build-card, .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .glow-card:hover { transform: none !important; }
     }
   </style>
+
   <noscript>
     <style>
-      .reveal { opacity: 1 !important; transform: none !important; }
+      .illuminate-word, .build-card, .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
     </style>
   </noscript>
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://frontendxlab.dev/#organization","name":"FrontendXLab","url":"https://frontendxlab.dev","logo":"https://frontendxlab.dev/logo.svg","description":"Open-source engineering collective developing developer tools, AI-powered interview platforms, and tree-shakable web libraries.","sameAs":["https://github.com/frontendxlab","https://www.npmjs.com/org/frontendxlab"]},{"@type":"WebSite","@id":"https://frontendxlab.dev/#website","url":"https://frontendxlab.dev","name":"FrontendXLab","publisher":{"@id":"https://frontendxlab.dev/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://frontendxlab.dev/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","@id":"https://frontendxlab.dev/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://frontendxlab.dev"}]},{"@type":"ItemList","@id":"https://frontendxlab.dev/#products","name":"FrontendXLab Suite","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"FrontendX","applicationCategory":"EducationalApplication","url":"https://frontendx.dev","description":"AI-powered frontend interview prep with DSA, JavaScript challenges, UI components, system design, compiler, and playground."}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"OpenCode Visual Inspector","applicationCategory":"DeveloperApplication","url":"https://opencode-annotate.frontendx.dev","description":"Point. Describe. Ship. Select web UI elements and send visual change requests to OpenCode."}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"OpenCode Computer Use","applicationCategory":"DeveloperApplication","url":"https://opencode-computer-use.pages.dev","description":"Desktop control plugin for OpenCode, enabling Codex-style terminal and GUI automation sessions."}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"WebC","applicationCategory":"DeveloperApplication","url":"https://webc.frontendx.dev","description":"Browser-based runtime environment allowing instant client-side execution of code."}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/dsa-js","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@frontendxlab/dsa-js","description":"Tree-shakable DSA runtime library with high-performance heaps, tries, graphs, and segment trees."}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/agent-ui","applicationCategory":"DeveloperApplication","url":"https://agent-ui.frontendx.dev","description":"shadcn-style chat and stream components designed specifically for AI agent interfaces."}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/medicons","applicationCategory":"DesignApplication","url":"https://medicons.frontendx.dev","description":"Hospital clinical icons suite featuring 219 medical SVGs optimized for healthcare web applications."}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"GooUI","applicationCategory":"DeveloperApplication","url":"https://gooui.frontendx.dev","description":"Animated UI component library built for fluid micro-interactions and interactive motion."}}]},{"@type":"FAQPage","@id":"https://frontendxlab.dev/#faq","mainEntity":[{"@type":"Question","name":"What is FrontendXLab?","acceptedAnswer":{"@type":"Answer","text":"FrontendXLab is an engineering research and development collective that creates developer tools, browser execution environments, tree-shakable algorithm libraries, and AI-driven frontend interview platforms."}},{"@type":"Question","name":"What is FrontendX?","acceptedAnswer":{"@type":"Answer","text":"FrontendX is the flagship interview platform built by FrontendXLab. It offers comprehensive AI-assisted practice for frontend engineers, featuring data structures and algorithms in JavaScript, real-world UI implementation challenges, system design, and an integrated browser code compiler."}},{"@type":"Question","name":"How do I install FrontendXLab npm packages?","acceptedAnswer":{"@type":"Answer","text":"FrontendXLab libraries are published under the @frontendxlab organization on npm. You can install packages such as @frontendxlab/dsa-js, @frontendxlab/agent-ui, @frontendxlab/medicons, @frontendxlab/opencode-visual-inspector, or @frontendxlab/opencode-computer-use using standard package managers such as npm, pnpm, or bun."}},{"@type":"Question","name":"What is the OpenCode Visual Inspector?","acceptedAnswer":{"@type":"Answer","text":"OpenCode Visual Inspector is a specialized developer utility that allows engineers to click and select elements directly in a live web browser interface, annotate requested visual modifications, and dispatch structured change requests to OpenCode."}},{"@type":"Question","name":"Are FrontendXLab developer tools and libraries free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. FrontendXLab is committed to open-source software. Our npm packages, browser runtime environments, and visual toolkits are available on GitHub and npm under permissive open-source licenses."}}]}]}</script>
-</head>
-<body class="min-h-[100dvh] flex flex-col relative selection:bg-cyan-500/20 selection:text-cyan-200">
 
+  <!-- Complete Compact JSON-LD -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://frontendxlab.dev/#organization","name":"FrontendXLab","url":"https://frontendxlab.dev","logo":"https://frontendxlab.dev/logo.svg","description":"Open-source engineering laboratory developing autonomous developer tooling, browser sandbox runtimes, and algorithmic platforms.","sameAs":["https://github.com/frontendxlab","https://www.npmjs.com/org/frontendxlab"]},{"@type":"WebSite","@id":"https://frontendxlab.dev/#website","url":"https://frontendxlab.dev","name":"FrontendXLab","publisher":{"@id":"https://frontendxlab.dev/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://frontendxlab.dev/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"BreadcrumbList","@id":"https://frontendxlab.dev/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://frontendxlab.dev"}]},{"@type":"FAQPage","@id":"https://frontendxlab.dev/#faq","mainEntity":[{"@type":"Question","name":"What is FrontendXLab?","acceptedAnswer":{"@type":"Answer","text":"FrontendXLab is an open-source engineering laboratory that designs and builds developer tools, client-side browser runtime environments, tree-shakable algorithm libraries, and AI-powered interview preparation platforms."}},{"@type":"Question","name":"What is FrontendX?","acceptedAnswer":{"@type":"Answer","text":"FrontendX is the flagship AI-powered frontend interview preparation platform. It delivers JavaScript challenges, data structure algorithms, practical UI scenarios, system design architectures, and real-time AI guidance in an integrated browser compiler."}},{"@type":"Question","name":"What is WebC and how does it execute code?","acceptedAnswer":{"@type":"Answer","text":"WebC is a browser-based code execution sandbox enabling zero-install, safe client-side code execution and multi-language compilation directly in modern browsers without server roundtrips."}},{"@type":"Question","name":"What are OpenCode Visual Inspector and Computer Use?","acceptedAnswer":{"@type":"Answer","text":"OpenCode Visual Inspector allows engineers to inspect and select UI elements in live browser sessions to transmit visual changes directly to OpenCode. OpenCode Computer Use provides autonomous desktop and GUI automation capabilities."}},{"@type":"Question","name":"What is the CC platform?","acceptedAnswer":{"@type":"Answer","text":"CC is an educational and study platform for CCA-F and AI engineering courses, focusing on coding harnesses, evaluation loops, and autonomous agent systems. It is not a code compiler."}},{"@type":"Question","name":"How do I install FrontendXLab packages?","acceptedAnswer":{"@type":"Answer","text":"All public libraries are published under the @frontendxlab organization on npm. Install with npm, pnpm, or bun using commands like npm install @frontendxlab/dsa-js."}},{"@type":"Question","name":"Are FrontendXLab tools open source?","acceptedAnswer":{"@type":"Answer","text":"Yes. FrontendXLab libraries, developer extensions, and runtime utilities are released on GitHub and npm under permissive open-source licenses."}},{"@type":"Question","name":"How does FrontendXLab approach design and motion engineering?","acceptedAnswer":{"@type":"Answer","text":"FrontendXLab adheres to strict motion discipline: physics-based spring curves, reduced-motion fallbacks, zero layout shift, and clean monochrome aesthetics."}}]},{"@type":"ItemList","@id":"https://frontendxlab.dev/#products","name":"FrontendXLab Product Ecosystem","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"SoftwareApplication","name":"FrontendX","applicationCategory":"EducationalApplication","url":"https://frontendx.dev","description":"Master Frontend Interviews with AI - DSA, JavaScript problems, UI components, system design, AI coaching, and browser compiler."}},{"@type":"ListItem","position":2,"item":{"@type":"SoftwareApplication","name":"OpenCode Visual Inspector","applicationCategory":"DeveloperApplication","url":"https://opencode-annotate.frontendx.dev","description":"Point. Describe. Ship. Select UI elements and send visual changes to OpenCode."}},{"@type":"ListItem","position":3,"item":{"@type":"SoftwareApplication","name":"OpenCode Computer Use","applicationCategory":"DeveloperApplication","url":"https://opencode-computer-use.pages.dev","description":"Desktop control plugin for OpenCode enabling automated terminal and GUI workflows."}},{"@type":"ListItem","position":4,"item":{"@type":"SoftwareApplication","name":"WebC","applicationCategory":"DeveloperApplication","url":"https://webc.frontendx.dev","description":"Run anything in the browser - client-side browser runtime and zero-install code execution."}},{"@type":"ListItem","position":5,"item":{"@type":"SoftwareApplication","name":"SiteInfo","applicationCategory":"DeveloperApplication","url":"https://siteinfo.frontendx.dev","description":"Real-time web diagnostics, metadata inspection, and technology stack detection."}},{"@type":"ListItem","position":6,"item":{"@type":"SoftwareApplication","name":"CC","applicationCategory":"EducationalApplication","url":"https://cc.frontendx.dev","description":"CCA-F Study Platform and AI Engineering Courses - learning platform for AI, harnesses, and agent systems."}},{"@type":"ListItem","position":7,"item":{"@type":"SoftwareApplication","name":"Learn DSA","applicationCategory":"EducationalApplication","url":"https://learn-dsa.frontendx.dev","description":"Interactive data structures and algorithms learning with step-by-step visualizations."}},{"@type":"ListItem","position":8,"item":{"@type":"SoftwareApplication","name":"Chat","applicationCategory":"DeveloperApplication","url":"https://chat.frontendx.dev","description":"Conversational AI assistant tailored for frontend engineering, architecture, and debugging."}},{"@type":"ListItem","position":9,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/dsa-js","applicationCategory":"DeveloperApplication","url":"https://www.npmjs.com/package/@frontendxlab/dsa-js","description":"Tree-shakable DSA runtime library with binary heaps, segment trees, tries, and graph primitives."}},{"@type":"ListItem","position":10,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/agent-ui","applicationCategory":"DeveloperApplication","url":"https://agent-ui.frontendx.dev","description":"shadcn-style chat UI and tool visualizer components built for autonomous AI agents."}},{"@type":"ListItem","position":11,"item":{"@type":"SoftwareApplication","name":"@frontendxlab/medicons","applicationCategory":"DesignApplication","url":"https://medicons.frontendx.dev","description":"Specialized collection of 219 hospital clinical SVG icons for healthcare interfaces and EHRs."}},{"@type":"ListItem","position":12,"item":{"@type":"SoftwareApplication","name":"GooUI","applicationCategory":"DeveloperApplication","url":"https://gooui.frontendx.dev","description":"Fluid animated UI component library powered by physics-based spring curves and micro-interactions."}},{"@type":"ListItem","position":13,"item":{"@type":"SoftwareApplication","name":"Discovery Hub","applicationCategory":"DeveloperApplication","url":"https://discovery-hub.frontendx.dev","description":"Catalog of experimental builds, research prototypes, and architectural explorations."}},{"@type":"ListItem","position":14,"item":{"@type":"SoftwareApplication","name":"NextJS","applicationCategory":"DeveloperApplication","url":"https://nextjs.frontendx.dev","description":"FrontendX Next.js implementation testing React Server Components and edge execution."}},{"@type":"ListItem","position":15,"item":{"@type":"SoftwareApplication","name":"JDH","applicationCategory":"HealthApplication","url":"https://jdh.frontendx.dev","description":"Jamia Medical Centre and Hospital clinical portal integrating patient care, records, and Medicons SVGs."}}]}]}</script>
+</head>
+
+<body class="min-h-screen flex flex-col relative selection:bg-white/10 selection:text-white">
+
+  <!-- Fixed ambient background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[680px] h-[440px] bg-gradient-to-br from-blue-600/15 via-cyan-500/10 to-transparent rounded-full blur-3xl"></div>
-    <div class="absolute top-[45%] right-[-10%] w-[420px] h-[420px] bg-blue-600/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-[75%] left-[-10%] w-[420px] h-[420px] bg-cyan-600/10 rounded-full blur-3xl"></div>
-    <div class="absolute inset-0 bg-grid-ambient opacity-60"></div>
+    <div class="hero-glow-spot w-[700px] h-[700px] -top-64 left-1/2 -translate-x-1/2 opacity-70"></div>
+    <div class="hero-glow-spot w-[500px] h-[500px] top-[40%] -right-48 opacity-40"></div>
+    <div class="hero-glow-spot w-[500px] h-[500px] top-[75%] -left-48 opacity-40"></div>
+    <div class="absolute inset-0 bg-grid-glowfly opacity-70"></div>
   </div>
 
+  <!-- FLOATING PILL NAVBAR -->
   <header class="fixed top-5 inset-x-0 mx-auto w-[calc(100%-2rem)] max-w-5xl z-50">
-    <nav class="rounded-full border border-white/10 bg-[#090d1f]/85 backdrop-blur-md px-4 sm:px-6 py-2.5 shadow-2xl flex items-center justify-between ring-1 ring-white/5" aria-label="Main Navigation">
+    <nav class="glass-pill rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between" aria-label="Main Navigation">
       <a href="https://frontendxlab.dev" class="flex items-center gap-2.5 group" aria-label="FrontendXLab Home">
-        <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center p-px shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform duration-200 ease-spring">
-          <div class="w-full h-full bg-[#080b18] rounded-[7px] flex items-center justify-center">
-            <svg class="w-4 h-4 text-cyan-400 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
-          </div>
+        <div class="w-8 h-8 rounded-lg bg-[#141414] border border-white/15 flex items-center justify-center group-hover:border-white/40 transition-colors duration-300">
+          <svg class="w-4 h-4 text-[#EBEBEB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7l8-4 8 4v10l-8 4-8-4V7z"/>
+            <path d="M12 3v18"/>
+            <path d="M4 7l8 4 8-4"/>
+          </svg>
         </div>
-        <span class="font-bold text-sm sm:text-base tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-          FrontendX<span class="text-cyan-400">Lab</span>
+        <span class="font-display font-bold text-sm tracking-tight text-[#EBEBEB] group-hover:text-white transition-colors">
+          FrontendX<span class="text-[#A1A1A1]">Lab</span>
         </span>
       </a>
 
-      <div class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold text-slate-300">
-        <a href="#flagship" class="hover:text-cyan-400 transition-colors">Flagship</a>
-        <a href="#tools" class="hover:text-cyan-400 transition-colors">Tools</a>
-        <a href="#libraries" class="hover:text-cyan-400 transition-colors">Libraries</a>
-        <a href="#ecosystem" class="hover:text-cyan-400 transition-colors">Ecosystem</a>
-        <a href="#faq" class="hover:text-cyan-400 transition-colors">FAQ</a>
+      <div class="hidden md:flex items-center gap-7 text-xs tracking-wider uppercase font-medium text-white/70">
+        <a href="#flagship" class="hover:text-white transition-colors">Flagship</a>
+        <a href="#devtools" class="hover:text-white transition-colors">DevTools</a>
+        <a href="#learning" class="hover:text-white transition-colors">Learning</a>
+        <a href="#libraries" class="hover:text-white transition-colors">Libraries</a>
+        <a href="#ecosystem" class="hover:text-white transition-colors">Ecosystem</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="https://github.com/frontendxlab" target="_blank" rel="noopener noreferrer" class="p-2 text-slate-400 hover:text-white transition-colors rounded-full hover:bg-white/5" aria-label="FrontendXLab GitHub">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <a href="https://github.com/frontendxlab" target="_blank" rel="noopener noreferrer" class="p-2 text-white/60 hover:text-white transition-colors rounded-full hover:bg-white/5" aria-label="FrontendXLab GitHub">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
         </a>
-        <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="group relative inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 active:scale-[0.98] transition-all duration-200 ease-spring" aria-label="Launch FrontendX Platform">
+        <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold text-black bg-[#EBEBEB] hover:bg-white active:scale-95 transition-all duration-200" aria-label="Launch FrontendX Platform">
           <span>FrontendX</span>
-          <svg class="w-3.5 h-3.5 text-white/90 group-hover:translate-x-0.5 transition-transform duration-200 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14m-7-7 7 7-7 7"/>
+          </svg>
         </a>
       </div>
     </nav>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="relative z-10 flex-grow">
 
-    <!-- HERO SECTION -->
-    <section class="min-h-[100dvh] flex items-center justify-center pt-32 pb-24 px-4 sm:px-6 max-w-6xl mx-auto text-center" aria-labelledby="hero-heading">
-      <div class="flex flex-col items-center">
-        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-300 text-xs font-semibold tracking-wide uppercase mb-8 shadow-inner shadow-cyan-500/10">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" aria-hidden="true"></span>
+    <!-- HERO SECTION WITH INTERACTIVE PARTICLES/FIREFLIES -->
+    <section class="relative min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-20 px-4 sm:px-6 text-center overflow-hidden" aria-labelledby="hero-heading">
+      <canvas id="hero-particle-canvas" class="absolute inset-0 pointer-events-auto z-0" aria-hidden="true"></canvas>
+
+      <div class="relative z-10 flex flex-col items-center max-w-5xl mx-auto">
+        <div class="reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-[#0A0A0A]/90 text-white/80 text-xs font-medium tracking-wide uppercase mb-8 shadow-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping" aria-hidden="true"></span>
           <span>Open Source Engineering Collective</span>
         </div>
 
-        <h1 id="hero-heading" class="reveal text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white max-w-4xl leading-[1.1] mb-6">
-          Architecting High-Performance <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">Frontend Systems</span>
+        <h1 id="hero-heading" class="font-display font-black text-5xl sm:text-7xl md:text-8xl tracking-tight text-[#EBEBEB] max-w-4xl leading-[1.05] mb-6">
+          FrontendXLab
         </h1>
 
-        <p class="reveal text-base sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed mb-10">
-          FrontendXLab crafts autonomous developer tooling, client-side browser execution sandboxes, tree-shakable algorithm runtimes, and AI-accelerated interview platforms.
+        <p class="reveal text-lg sm:text-2xl text-white/70 max-w-2xl font-light tracking-tight leading-relaxed mb-10">
+          Developer Tools for the Modern Web
         </p>
 
         <div class="reveal flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
-          <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:brightness-110 active:scale-[0.98] transition-all duration-200 ease-spring" aria-label="Launch FrontendX Platform">
-            <span>Explore FrontendX Flagship</span>
-            <svg class="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+          <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold text-black bg-[#EBEBEB] hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200" aria-label="Launch FrontendX Flagship">
+            <span>Launch FrontendX</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14m-7-7 7 7-7 7"/>
+            </svg>
           </a>
 
-          <a href="#tools" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-slate-200 bg-white/5 border border-white/10 hover:bg-white/10 hover:text-white active:scale-[0.98] transition-all duration-200 ease-spring" aria-label="Navigate to Developer Tools">
-            <span>View Developer Toolkit</span>
-            <svg class="w-4 h-4 text-slate-400 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m19 9-7 7-7-7"/></svg>
+          <a href="#devtools" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-[#EBEBEB] bg-[#0A0A0A] border border-white/10 hover:bg-[#141414] hover:border-white/20 active:scale-[0.98] transition-all duration-200" aria-label="Explore Developer Tools">
+            <span>Explore Tools</span>
+            <svg class="w-4 h-4 text-white/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m19 9-7 7-7-7"/>
+            </svg>
           </a>
         </div>
 
+        <!-- Animated Stat Counters -->
         <div class="reveal grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl border-t border-white/10 pt-10 text-left">
-          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-            <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">15+</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Ecosystem Products</div>
+          <div class="p-5 rounded-xl bg-[#0A0A0A]/70 border border-white/5">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-[#EBEBEB] tracking-tight" data-counter="15" data-suffix="+">15+</div>
+            <div class="text-xs text-white/50 font-medium mt-1">Products</div>
           </div>
-          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-            <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 tracking-tight">219</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Hospital Clinical SVGs</div>
+          <div class="p-5 rounded-xl bg-[#0A0A0A]/70 border border-white/5">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-[#EBEBEB] tracking-tight" data-counter="219" data-suffix="">219</div>
+            <div class="text-xs text-white/50 font-medium mt-1">SVGs</div>
           </div>
-          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-            <div class="text-2xl sm:text-3xl font-extrabold text-blue-400 tracking-tight">100%</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Tree-Shakable Runtime</div>
+          <div class="p-5 rounded-xl bg-[#0A0A0A]/70 border border-white/5">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-[#EBEBEB] tracking-tight" data-counter="5" data-suffix=" Packages">5</div>
+            <div class="text-xs text-white/50 font-medium mt-1">npm Packages</div>
           </div>
-          <div class="p-4 rounded-xl bg-white/[0.02] border border-white/5">
-            <div class="text-2xl sm:text-3xl font-extrabold text-teal-300 tracking-tight">Zero</div>
-            <div class="text-xs text-slate-400 font-medium mt-1">Install Sandboxes</div>
+          <div class="p-5 rounded-xl bg-[#0A0A0A]/70 border border-white/5">
+            <div class="text-3xl sm:text-4xl font-display font-extrabold text-[#EBEBEB] tracking-tight" data-counter="100" data-suffix="%">100%</div>
+            <div class="text-xs text-white/50 font-medium mt-1">Tree-Shakable</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FLAGSHIP SPOTLIGHT (FrontendX) -->
-    <section id="flagship" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="flagship-heading">
-      <div class="flex flex-col items-center text-center mb-12">
-        <span class="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-2">Primary Flagship</span>
-        <h2 id="flagship-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          FrontendX Platform
+    <!-- FLAGSHIP SECTION (FRONTENDX) -->
+    <section id="flagship" class="py-28 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="flagship-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Primary Flagship</span>
+        <h2 id="flagship-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
+          Master Frontend Interviews with Autonomous AI Coaching
         </h2>
-        <p class="text-slate-400 max-w-xl text-sm sm:text-base mt-3">
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
           The next-generation preparation suite built specifically for frontend engineering interviews.
         </p>
       </div>
 
-      <article class="reveal card-shell group">
-        <div class="card-core p-8 sm:p-12 relative overflow-hidden">
-          <div class="absolute -right-24 -top-24 w-80 h-80 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" aria-hidden="true"></div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div class="lg:col-span-7 flex flex-col items-start text-left">
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/15 border border-blue-500/30 text-blue-300 text-xs font-semibold mb-6">
-                <svg class="w-3.5 h-3.5 text-blue-400 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                <span>Flagship Application</span>
-              </div>
-
-              <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-4">
-                Master Frontend Interviews with AI
-              </h3>
-
-              <p class="text-slate-300 text-base leading-relaxed mb-6 font-normal">
-                FrontendX combines intelligent AI coaching with interactive JavaScript challenges, algorithmic problem sets, real-world component scenarios, frontend system design case studies, and an integrated in-browser execution sandbox.
-              </p>
-
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full mb-8 text-xs font-medium text-slate-300">
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>DSA in JavaScript</span>
-                </div>
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>Interactive UI Sets</span>
-                </div>
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>System Design</span>
-                </div>
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>Live Code Sandbox</span>
-                </div>
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>AI Hint Engine</span>
-                </div>
-                <div class="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/5">
-                  <svg class="w-4 h-4 text-cyan-400 shrink-0 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
-                  <span>Browser Compiler</span>
-                </div>
-              </div>
-
-              <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="group/btn inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/35 active:scale-[0.98] transition-all duration-200 ease-spring" aria-label="Visit frontendx.dev">
-                <span>Launch frontendx.dev</span>
-                <svg class="w-4 h-4 text-white group-hover/btn:translate-x-1 transition-transform duration-200 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
-              </a>
+      <article class="glow-card p-6 sm:p-10 relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 flex flex-col items-start text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#141414] border border-white/10 text-xs font-semibold text-[#EBEBEB] mb-5">
+              <span>Flagship Application</span>
             </div>
 
-            <div class="lg:col-span-5 w-full">
-              <div class="rounded-xl border border-white/10 bg-[#080b18] p-5 shadow-2xl font-mono text-xs text-slate-300">
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-slate-400">
-                  <div class="flex items-center gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-                  </div>
-                  <span class="text-[11px] font-sans font-medium text-slate-400">FrontendX AI Evaluation</span>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-[#EBEBEB] tracking-tight mb-4">
+              FrontendX
+            </h3>
+
+            <p class="text-white/70 text-base leading-relaxed mb-6 font-normal">
+              FrontendX combines intelligent AI coaching with interactive JavaScript challenges, algorithmic problem sets, real-world component scenarios, frontend system design case studies, and an integrated browser execution sandbox.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 w-full mb-8 text-xs font-medium text-white/80">
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>DSA in JavaScript</span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>Interactive UI Sets</span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>System Design</span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>Live Code Sandbox</span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>AI Hint Engine</span>
+              </div>
+              <div class="flex items-center gap-2 p-2.5 rounded-lg bg-[#141414] border border-white/5">
+                <svg class="w-3.5 h-3.5 text-white/70 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/></svg>
+                <span>Browser Compiler</span>
+              </div>
+            </div>
+
+            <a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-black bg-[#EBEBEB] hover:bg-white active:scale-95 transition-all duration-200" aria-label="Visit frontendx.dev">
+              <span>Launch frontendx.dev</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Terminal Mockup -->
+          <div class="lg:col-span-5 w-full">
+            <div class="terminal-box p-5 font-mono text-xs text-white/80">
+              <div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-white/40">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-white/30"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-white/10"></span>
                 </div>
-                <div class="space-y-2 text-slate-300">
-                  <div class="text-cyan-400 font-semibold">$ frontendx solve --topic dsa</div>
-                  <div class="text-slate-400">Analyzing JavaScript solution complexity...</div>
-                  <div class="p-3 rounded-lg bg-white/[0.03] border border-white/5 space-y-1">
-                    <div class="flex justify-between text-slate-400 text-[11px]">
-                      <span>Time Complexity:</span>
-                      <span class="text-green-400 font-bold">O(n log k)</span>
-                    </div>
-                    <div class="flex justify-between text-slate-400 text-[11px]">
-                      <span>Space Overhead:</span>
-                      <span class="text-green-400 font-bold">O(k) aux</span>
-                    </div>
-                    <div class="flex justify-between text-slate-400 text-[11px]">
-                      <span>Test Cases:</span>
-                      <span class="text-cyan-300 font-bold">42 / 42 passed</span>
-                    </div>
+                <span class="text-[11px] font-sans font-medium text-white/50">FrontendX AI Engine</span>
+              </div>
+              <div class="space-y-2 text-white/85">
+                <div class="text-[#EBEBEB] font-semibold">$ frontendx solve --topic dsa-runtime</div>
+                <div class="text-white/50">Analyzing JavaScript solution complexity...</div>
+                <div class="p-3.5 rounded-lg bg-[#111111] border border-white/5 space-y-1.5 my-3">
+                  <div class="flex justify-between text-white/60 text-[11px]">
+                    <span>Time Complexity:</span>
+                    <span class="text-[#EBEBEB] font-bold">O(n log k)</span>
                   </div>
-                  <div class="text-emerald-400 font-medium">Ready for production-grade interview rounds.</div>
+                  <div class="flex justify-between text-white/60 text-[11px]">
+                    <span>Space Overhead:</span>
+                    <span class="text-[#EBEBEB] font-bold">O(k) aux</span>
+                  </div>
+                  <div class="flex justify-between text-white/60 text-[11px]">
+                    <span>Test Suites:</span>
+                    <span class="text-white font-bold">42 / 42 passed</span>
+                  </div>
                 </div>
+                <div class="text-white/90 font-medium">Verdict: Ready for production interview rounds.</div>
               </div>
             </div>
           </div>
@@ -407,559 +416,872 @@
       </article>
     </section>
 
-    <!-- DEVELOPER TOOLS -->
-    <section id="tools" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="tools-heading">
-      <div class="flex flex-col items-center text-center mb-12">
-        <span class="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-2">Developer Tools</span>
-        <h2 id="tools-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Precision Instrumentation &amp; Runtimes
+    <!-- DEVELOPER TOOLS & WEBC SECTION -->
+    <section id="devtools" class="py-28 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="devtools-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Developer Instrumentation</span>
+        <h2 id="devtools-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
+          Autonomous Tools and Zero-Install Runtimes
         </h2>
-        <p class="text-slate-400 max-w-xl text-sm sm:text-base mt-3">
-          Autonomous automation plugins, visual inspectors, and sandboxed in-browser execution environments.
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
+          Client-side execution sandboxes, visual inspectors, and automated desktop controllers.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- OpenCode Visual Inspector -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        <!-- WebC Featured Card (2 Columns Span) -->
+        <article class="glow-card lg:col-span-2 p-8 sm:p-10 flex flex-col justify-between" data-build-card>
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB]">Sandbox Runtime</span>
+              <span class="text-xs font-mono text-white/40">webc.frontendx.dev</span>
+            </div>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-[#EBEBEB] tracking-tight mt-2 mb-2">
+              WebC
+            </h3>
+            <p class="text-sm font-semibold text-white/90 mb-4 tracking-wide">Run anything in the browser</p>
+            <p class="text-white/70 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+              Browser-based runtime and sandboxed code execution engine. Compile, run, and evaluate multi-language code client-side with zero installations or server roundtrips.
+            </p>
+
+            <div class="terminal-box p-4 font-mono text-xs text-white/80 mb-6">
+              <div class="flex items-center justify-between pb-2 mb-2 border-b border-white/10 text-white/40 text-[11px]">
+                <span>webc-sandbox-v1</span>
+                <span>wasm32 / isolated thread</span>
               </div>
-              <span class="card-tag">npm package</span>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                OpenCode Visual Inspector
-              </h3>
-              <p class="text-xs font-semibold text-cyan-400/90 mb-3 tracking-wide">Point. Describe. Ship.</p>
-              <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-                Select live web UI elements in browser sessions and transmit structured visual change requests directly to OpenCode.
-              </p>
+              <div class="text-white/90 font-medium">const runtime = await WebC.spawn({ isolated: true });</div>
+              <div class="text-white/60">await runtime.execute('console.log("Zero-install runtime active");');</div>
+              <div class="text-[#EBEBEB] mt-1 font-semibold">&gt; Zero-install runtime active [0.4ms]</div>
             </div>
-            <div class="card-action">
-              <span class="card-meta">@frontendxlab/opencode-visual-inspector</span>
-              <a href="https://opencode-annotate.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="OpenCode Visual Inspector">
-                <span>Launch</span>
-                <svg class="w-3.5 h-3.5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">Zero server dependencies</span>
+            <a href="https://webc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-black bg-[#EBEBEB] hover:bg-white active:scale-95 transition-all" aria-label="Launch WebC Platform">
+              <span>Launch WebC</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- OpenCode Visual Inspector -->
+        <article class="glow-card p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB]">npm package</span>
+              <span class="text-xs font-mono text-white/40">visual-inspector</span>
             </div>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              OpenCode Visual Inspector
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">Point. Describe. Ship.</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Select UI elements directly in live browser sessions and transmit structured visual change requests to OpenCode.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50 truncate max-w-[140px]">@frontendxlab/opencode-visual-inspector</span>
+            <a href="https://opencode-annotate.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/20 active:scale-95 transition-all" aria-label="Launch OpenCode Visual Inspector">
+              <span>Launch</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
         <!-- OpenCode Computer Use -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-              </div>
-              <span class="card-tag">Desktop Control</span>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                OpenCode Computer Use
-              </h3>
-              <p class="text-xs font-semibold text-cyan-400/90 mb-3 tracking-wide">Autonomous Desktop Automation</p>
-              <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-                Desktop control plugin for OpenCode, executing automated terminal workflows, mouse interactions, and Codex-style sessions.
-              </p>
+        <article class="glow-card p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB]">Desktop Control</span>
+              <span class="text-xs font-mono text-white/40">computer-use</span>
             </div>
-            <div class="card-action">
-              <span class="card-meta">@frontendxlab/opencode-computer-use</span>
-              <a href="https://opencode-computer-use.pages.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="OpenCode Computer Use">
-                <span>Launch</span>
-                <svg class="w-3.5 h-3.5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              OpenCode Computer Use
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">Desktop Control Plugin</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Desktop control plugin for OpenCode, executing automated terminal workflows, mouse interactions, and Codex-style sessions.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50 truncate max-w-[140px]">@frontendxlab/opencode-computer-use</span>
+            <a href="https://opencode-computer-use.pages.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/20 active:scale-95 transition-all" aria-label="Launch OpenCode Computer Use">
+              <span>Launch</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
-        <!-- WebC -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-              </div>
-              <span class="card-tag">Sandbox Runtime</span>
-              <h3 class="text-lg font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                WebC
-              </h3>
-              <p class="text-xs font-semibold text-cyan-400/90 mb-3 tracking-wide">Run Anything in the Browser</p>
-              <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
-                Client-side browser runtime sandbox enabling instant zero-install multi-language code compilation and safe execution.
-              </p>
+        <!-- SiteInfo (2 Columns Span) -->
+        <article class="glow-card lg:col-span-2 p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB]">Diagnostics</span>
+              <span class="text-xs font-mono text-white/40">siteinfo.frontendx.dev</span>
             </div>
-            <div class="card-action">
-              <span class="card-meta">webc.frontendx.dev</span>
-              <a href="https://webc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="WebC platform">
-                <span>Launch</span>
-                <svg class="w-3.5 h-3.5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              SiteInfo
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">Site Diagnostics and Technology Detection</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Auditing utility providing real-time metadata diagnostics, Core Web Vitals profiling, security headers verification, and technology stack detection.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">Core Web Vitals &amp; Stack Telemetry</span>
+            <a href="https://siteinfo.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/20 active:scale-95 transition-all" aria-label="Launch SiteInfo Diagnostics">
+              <span>Launch SiteInfo</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
+
       </div>
     </section>
 
-    <!-- LIBRARIES -->
-    <section id="libraries" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="libraries-heading">
-      <div class="flex flex-col items-center text-center mb-12">
-        <span class="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-2">Open Source Packages</span>
-        <h2 id="libraries-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          High-Performance Libraries &amp; Design Systems
+    <!-- LEARNING & AI SECTION -->
+    <section id="learning" class="py-28 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="learning-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Learning &amp; AI</span>
+        <h2 id="learning-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
+          Curated Platforms for Engineering Mastery
         </h2>
-        <p class="text-slate-400 max-w-xl text-sm sm:text-base mt-3">
-          Tree-shakable algorithmic engines, specialized clinical iconography, and AI agent chat interfaces.
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
+          AI engineering courses, algorithmic visualizations, and specialized frontend assistance.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- dsa-js -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-              </div>
-              <span class="card-tag">npm package</span>
-              <h3 class="text-base font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                @frontendxlab/dsa-js
-              </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Tree-shakable DSA runtime library with high-performance heaps, tries, segment trees, and graph algorithms.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">143+ /mo</span>
-              <a href="https://www.npmjs.com/package/@frontendxlab/dsa-js" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="@frontendxlab/dsa-js on npm">
-                <span>npm</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- CC -->
+        <article class="glow-card p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Study Platform</span>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              CC
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">CCA-F Study Platform &amp; AI Engineering Courses</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Learning platform for AI, harnesses, and engineering. Comprehensive curriculum covering autonomous agent design, evaluation frameworks, and coding harness architectures.
+            </p>
           </div>
-        </article>
-
-        <!-- agent-ui -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </div>
-              <span class="card-tag">UI Kit</span>
-              <h3 class="text-base font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                @frontendxlab/agent-ui
-              </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                shadcn-style chat components, message streamers, and tool visualizers crafted specifically for autonomous AI agents.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">React / Tailwind</span>
-              <a href="https://agent-ui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Agent UI components">
-                <span>View</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- medicons -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
-              </div>
-              <span class="card-tag">Icon Suite</span>
-              <h3 class="text-base font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                @frontendxlab/medicons
-              </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Hospital clinical icons featuring 219 medical SVGs optimized for healthcare software, EHRs, and clinical dashboards.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">219 SVGs</span>
-              <a href="https://medicons.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Medicons catalog">
-                <span>View</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- GooUI -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="card-icon">
-                <svg class="w-5 h-5 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-              </div>
-              <span class="card-tag">Motion Kit</span>
-              <h3 class="text-base font-bold text-white tracking-tight mt-2 mb-1 group-hover:text-cyan-300 transition-colors">
-                GooUI
-              </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Fluid animated UI component library designed with purposeful motion, micro-interactions, and physics-based easing.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">Micro-motion</span>
-              <a href="https://gooui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="GooUI library">
-                <span>View</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- OTHER PRODUCTS & ECOSYSTEM -->
-    <section id="ecosystem" class="py-24 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="ecosystem-heading">
-      <div class="flex flex-col items-center text-center mb-12">
-        <span class="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-2">Ecosystem Showcase</span>
-        <h2 id="ecosystem-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Specialized Platforms &amp; Utilities
-        </h2>
-        <p class="text-slate-400 max-w-xl text-sm sm:text-base mt-3">
-          Specialized tools addressing learning, web analysis, code compilation, conversational AI, and clinical health.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Discovery Hub -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">Discovery Hub</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Central catalog for exploring FrontendXLab experimental builds, community showcases, and emerging frontend prototypes.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">discovery-hub</span>
-              <a href="https://discovery-hub.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Discovery Hub">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">cc.frontendx.dev</span>
+            <a href="https://cc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-black bg-[#EBEBEB] hover:bg-white active:scale-95 transition-all" aria-label="Visit CC Study Platform">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
         <!-- Learn DSA -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">Learn DSA</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Interactive educational platform featuring step-by-step visualizations for data structures and algorithmic complexity.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">learn-dsa</span>
-              <a href="https://learn-dsa.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Learn DSA">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+        <article class="glow-card p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Interactive Pedagogy</span>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              Learn DSA
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">Interactive Visual DSA</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Interactive DSA learning with visualizations. Step-by-step memory and pointer animations for complex algorithms, tree traversals, and dynamic programming patterns.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">learn-dsa</span>
+            <a href="https://learn-dsa.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/20 active:scale-95 transition-all" aria-label="Visit Learn DSA">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
-        <!-- SiteInfo -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">SiteInfo</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Auditing utility providing real-time metadata diagnostics, Core Web Vitals checks, and technology stack detection.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">siteinfo</span>
-              <a href="https://siteinfo.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="SiteInfo">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+        <!-- Chat -->
+        <article class="glow-card p-8 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Conversational AI</span>
+            <h3 class="font-display text-xl font-bold text-[#EBEBEB] tracking-tight mb-1">
+              Chat
+            </h3>
+            <p class="text-xs font-semibold text-white/90 mb-3 tracking-wide">AI Chat Assistant</p>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              AI chat assistant for frontend engineering. Conversational intelligence trained for frontend architectural decisions, performance profiling, and debugging.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">chat.frontendx.dev</span>
+            <a href="https://chat.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-white/10 hover:bg-white/20 active:scale-95 transition-all" aria-label="Visit Chat Assistant">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LIBRARIES SECTION (CARDS THAT BUILD FROM BOTTOM WITH STAGGER) -->
+    <section id="libraries" class="py-28 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="libraries-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Open Source Packages</span>
+        <h2 id="libraries-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
+          High-Performance Libraries &amp; Design Kits
+        </h2>
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
+          Tree-shakable algorithm runtimes, clinical iconography, and AI agent interface primitives.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- 1: @frontendxlab/dsa-js -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2 py-0.5 rounded bg-[#171717] border border-white/10 text-[11px] font-semibold text-[#EBEBEB] inline-block mb-3">npm package</span>
+            <h3 class="font-display text-base font-bold text-[#EBEBEB] tracking-tight mb-1">
+              @frontendxlab/dsa-js
+            </h3>
+            <p class="text-white/70 text-xs leading-relaxed mb-6 font-normal">
+              Tree-shakable DSA runtime with binary heaps, segment trees, tries, disjoint-set unions, and graph traversal primitives.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-white/50">npm install</span>
+            <a href="https://www.npmjs.com/package/@frontendxlab/dsa-js" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#EBEBEB] hover:text-white" aria-label="@frontendxlab/dsa-js on npm">
+              <span>npm</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2: @frontendxlab/agent-ui -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2 py-0.5 rounded bg-[#171717] border border-white/10 text-[11px] font-semibold text-[#EBEBEB] inline-block mb-3">UI Kit</span>
+            <h3 class="font-display text-base font-bold text-[#EBEBEB] tracking-tight mb-1">
+              @frontendxlab/agent-ui
+            </h3>
+            <p class="text-white/70 text-xs leading-relaxed mb-6 font-normal">
+              shadcn-style chat UI and tool execution visualization primitives crafted specifically for autonomous AI agents.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-white/50">agent-ui</span>
+            <a href="https://agent-ui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#EBEBEB] hover:text-white" aria-label="Visit Agent UI">
+              <span>View</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3: @frontendxlab/medicons -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2 py-0.5 rounded bg-[#171717] border border-white/10 text-[11px] font-semibold text-[#EBEBEB] inline-block mb-3">Icon Suite</span>
+            <h3 class="font-display text-base font-bold text-[#EBEBEB] tracking-tight mb-1">
+              @frontendxlab/medicons
+            </h3>
+            <p class="text-white/70 text-xs leading-relaxed mb-6 font-normal">
+              219 hospital clinical SVG icons engineered for healthcare software, clinical dashboards, and electronic health records.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-white/50">219 SVGs</span>
+            <a href="https://medicons.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#EBEBEB] hover:text-white" aria-label="Visit Medicons Catalog">
+              <span>View</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4: GooUI -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2 py-0.5 rounded bg-[#171717] border border-white/10 text-[11px] font-semibold text-[#EBEBEB] inline-block mb-3">Motion Kit</span>
+            <h3 class="font-display text-base font-bold text-[#EBEBEB] tracking-tight mb-1">
+              GooUI
+            </h3>
+            <p class="text-white/70 text-xs leading-relaxed mb-6 font-normal">
+              Animated UI components with physics-based motion, micro-interactions, and fluid spring curve gestures.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[11px] font-mono text-white/50">Spring motion</span>
+            <a href="https://gooui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs font-semibold text-[#EBEBEB] hover:text-white" aria-label="Visit GooUI Components">
+              <span>View</span>
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM SECTION -->
+    <section id="ecosystem" class="py-28 px-4 sm:px-6 max-w-6xl mx-auto" aria-labelledby="ecosystem-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Ecosystem</span>
+        <h2 id="ecosystem-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
+          Specialized Platforms &amp; Healthcare Builds
+        </h2>
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
+          Experimental labs, framework variants, and production clinical portals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Discovery Hub -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Catalog</span>
+            <h3 class="font-display text-lg font-bold text-[#EBEBEB] tracking-tight mb-2">
+              Discovery Hub
+            </h3>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Catalog of experimental builds, research prototypes, and architectural explorations from FrontendXLab engineers.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">discovery-hub</span>
+            <a href="https://discovery-hub.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90 hover:text-white" aria-label="Visit Discovery Hub">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
         <!-- NextJS -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">NextJS</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                FrontendX Next.js implementation testing Server Components, streaming rendering architectures, and modern edge routing.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">nextjs</span>
-              <a href="https://nextjs.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="NextJS variant">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Architecture Variant</span>
+            <h3 class="font-display text-lg font-bold text-[#EBEBEB] tracking-tight mb-2">
+              NextJS
+            </h3>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              FrontendX Next.js variant testing React Server Components, streaming SSR, and edge execution models.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">nextjs.frontendx.dev</span>
+            <a href="https://nextjs.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90 hover:text-white" aria-label="Visit NextJS Variant">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
-        <!-- CC Compiler -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">CC Compiler</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                High-speed code compiler and playground supporting real-time parsing, evaluation, and test runner feedback.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">cc</span>
-              <a href="https://cc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="CC Compiler">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
+        <!-- JDH -->
+        <article class="glow-card p-6 flex flex-col justify-between" data-build-card>
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-[#171717] border border-white/10 text-xs font-semibold text-[#EBEBEB] inline-block mb-4">Healthcare Portal</span>
+            <h3 class="font-display text-lg font-bold text-[#EBEBEB] tracking-tight mb-2">
+              JDH
+            </h3>
+            <p class="text-white/70 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+              Jamia Medical Centre &amp; Hospital portal integrating clinical records, patient appointments, and the Medicons iconography suite.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-white/50">jdh.frontendx.dev</span>
+            <a href="https://jdh.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-white/90 hover:text-white" aria-label="Visit Jamia Medical Centre Portal">
+              <span>Explore</span>
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
+            </a>
           </div>
         </article>
 
-        <!-- Chat AI -->
-        <article class="reveal card-shell group">
-          <div class="card-core">
-            <div>
-              <div class="flex items-center gap-3 mb-3">
-                <div class="card-icon-sm">
-                  <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                </div>
-                <h3 class="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">Chat AI</h3>
-              </div>
-              <p class="text-slate-300 text-xs leading-relaxed mb-6 font-normal">
-                Specialized conversational assistant tuned for frontend engineering queries, architectural guidance, and debugging.
-              </p>
-            </div>
-            <div class="card-action">
-              <span class="card-meta">chat</span>
-              <a href="https://chat.frontendx.dev" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="Chat AI">
-                <span>Explore</span>
-                <svg class="w-3 h-3 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7m0 0H7m10 0v10"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- JDH Jamia Medical Centre -->
-        <article class="reveal card-shell group sm:col-span-2 lg:col-span-3">
-          <div class="card-core p-6 sm:p-8">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <span class="card-tag mb-3">Healthcare Solution</span>
-                <h3 class="text-lg font-bold text-white tracking-tight mb-1 group-hover:text-cyan-300 transition-colors">
-                  JDH - Jamia Medical Centre &amp; Hospital
-                </h3>
-                <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed font-normal">
-                  Production clinical portal engineered for Jamia Medical Centre &amp; Hospital, integrating patient records, appointment scheduling, and the Medicons clinical iconography suite.
-                </p>
-              </div>
-              <a href="https://jdh.frontendx.dev" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-white/5 border border-white/10 hover:bg-white/10 hover:border-cyan-500/40 active:scale-[0.98] transition-all self-start sm:self-auto shrink-0" aria-label="Visit Jamia Medical Centre Portal">
-                <span>Visit jdh.frontendx.dev</span>
-                <svg class="w-3.5 h-3.5 text-cyan-400 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6m4-3h6v6m-11 5L21 3"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
-    <!-- FAQ (AEO ACCORDION) -->
-    <section id="faq" class="py-24 px-4 sm:px-6 max-w-4xl mx-auto" aria-labelledby="faq-heading">
-      <div class="flex flex-col items-center text-center mb-12">
-        <span class="text-xs uppercase font-bold tracking-wider text-cyan-400 mb-2">Knowledge Base</span>
-        <h2 id="faq-heading" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+    <!-- FAQ SECTION (TWO-COLUMN ACCORDION) -->
+    <section id="faq" class="py-28 px-4 sm:px-6 max-w-5xl mx-auto" aria-labelledby="faq-heading">
+      <div class="flex flex-col items-center text-center mb-14">
+        <span class="text-xs uppercase font-bold tracking-widest text-[#A1A1A1] mb-3">Knowledge Base</span>
+        <h2 id="faq-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-[#EBEBEB] tracking-tight max-w-2xl" data-illuminate="true">
           Frequently Asked Questions
         </h2>
-        <p class="text-slate-400 max-w-xl text-sm sm:text-base mt-3">
+        <p class="text-white/60 max-w-xl text-sm sm:text-base mt-4 font-normal">
           Concise answers regarding FrontendXLab architecture, developer tools, and open-source availability.
         </p>
       </div>
 
-      <div class="space-y-4">
-        <!-- 1 -->
-        <details class="reveal faq-shell group">
-          <summary class="faq-summary">
-            <span>What is FrontendXLab?</span>
-            <span class="faq-icon">
-              <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-          </summary>
-          <div class="faq-body">
-            FrontendXLab is an engineering research and development collective that creates developer tools, browser execution environments, tree-shakable algorithm libraries, and AI-driven frontend interview platforms.
-          </div>
-        </details>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
 
-        <!-- 2 -->
-        <details class="reveal faq-shell group">
-          <summary class="faq-summary">
-            <span>What is FrontendX?</span>
-            <span class="faq-icon">
-              <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-          </summary>
-          <div class="faq-body">
-            FrontendX is the flagship interview platform built by FrontendXLab. It offers comprehensive AI-assisted practice for frontend engineers, featuring data structures and algorithms in JavaScript, real-world UI implementation challenges, system design, and an integrated browser code compiler.
-          </div>
-        </details>
+        <!-- Column 1 -->
+        <div class="space-y-4">
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What is FrontendXLab?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              FrontendXLab is an engineering research and development collective that creates developer tools, browser execution environments, tree-shakable algorithm libraries, and AI-driven frontend interview platforms.
+            </div>
+          </details>
 
-        <!-- 3 -->
-        <details class="reveal faq-shell group">
-          <summary class="faq-summary">
-            <span>How do I install FrontendXLab npm packages?</span>
-            <span class="faq-icon">
-              <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-          </summary>
-          <div class="faq-body">
-            FrontendXLab libraries are published under the @frontendxlab organization on npm. You can install packages such as @frontendxlab/dsa-js, @frontendxlab/agent-ui, @frontendxlab/medicons, @frontendxlab/opencode-visual-inspector, or @frontendxlab/opencode-computer-use using standard package managers such as npm, pnpm, or bun.
-          </div>
-        </details>
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What is FrontendX?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              FrontendX is our flagship interview preparation platform. It combines comprehensive AI coaching with algorithmic problem sets, practical UI scenarios, frontend system design case studies, and an integrated browser execution sandbox.
+            </div>
+          </details>
 
-        <!-- 4 -->
-        <details class="reveal faq-shell group">
-          <summary class="faq-summary">
-            <span>What is the OpenCode Visual Inspector?</span>
-            <span class="faq-icon">
-              <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-          </summary>
-          <div class="faq-body">
-            OpenCode Visual Inspector is a specialized developer utility that allows engineers to click and select elements directly in a live web browser interface, annotate requested visual modifications, and dispatch structured change requests to OpenCode.
-          </div>
-        </details>
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What is WebC and how does it execute code?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              WebC is a client-side code execution sandbox. It executes JavaScript, WebAssembly, and isolated multi-language runtimes directly in modern browser threads with zero server roundtrips or backend dependencies.
+            </div>
+          </details>
 
-        <!-- 5 -->
-        <details class="reveal faq-shell group">
-          <summary class="faq-summary">
-            <span>Are FrontendXLab developer tools and libraries free to use?</span>
-            <span class="faq-icon">
-              <svg class="w-4 h-4 icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </span>
-          </summary>
-          <div class="faq-body">
-            Yes. FrontendXLab is committed to open-source software. Our npm packages, browser runtime environments, and visual toolkits are available on GitHub and npm under permissive open-source licenses.
-          </div>
-        </details>
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What is OpenCode Visual Inspector?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              OpenCode Visual Inspector is an interactive extension enabling developers to select elements in live web applications, describe requested visual changes, and transmit structured modification requests directly to OpenCode agents.
+            </div>
+          </details>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="space-y-4">
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What is the CC platform?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              CC is an educational and study platform for CCA-F and AI engineering courses. It focuses on agent evaluation loops, coding harness design, and prompt engineering architectures. It is not a code compiler.
+            </div>
+          </details>
+
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>How do I install FrontendXLab npm packages?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              FrontendXLab packages are distributed through npm under the @frontendxlab organization scope. You can install @frontendxlab/dsa-js, @frontendxlab/agent-ui, @frontendxlab/medicons, and related packages using npm, pnpm, or bun.
+            </div>
+          </details>
+
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>Are FrontendXLab tools open source?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Yes. All FrontendXLab libraries, browser sandboxes, and developer instrumentation plugins are developed as open-source software and published under permissive licenses on GitHub and npm.
+            </div>
+          </details>
+
+          <details class="faq-item group">
+            <summary class="faq-summary">
+              <span>What design system does FrontendXLab use?</span>
+              <svg class="w-4 h-4 text-white/50 group-open:rotate-180 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-content">
+              Our products share a strict monochrome visual hierarchy rooted in pure blacks (#000000), subtle warm whites (#EBEBEB), Geist typography, and purposeful spring physics with reduced-motion accommodations.
+            </div>
+          </details>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <footer class="relative z-10 border-t border-white/10 bg-[#060814] pt-16 pb-12 text-slate-400 text-xs">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
-        <div class="md:col-span-2">
-          <div class="flex items-center gap-2.5 mb-4">
-            <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center p-px shadow-md">
-              <div class="w-full h-full bg-[#080b18] rounded-[7px] flex items-center justify-center">
-                <svg class="w-3.5 h-3.5 text-cyan-400 icon stroke-[2.5]" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
-              </div>
+  <!-- FOOTER WITH GIANT BRAND TEXT & ASCII/PARTICLE FIELD -->
+  <footer class="relative z-10 border-t border-white/10 bg-[#050505] pt-24 pb-12 overflow-hidden text-xs text-white/60">
+    <canvas id="footer-particle-canvas" class="absolute inset-0 pointer-events-none opacity-40 z-0" aria-hidden="true"></canvas>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
+
+      <!-- GIANT BRAND TEXT WITH PARALLAX / 3D TILT EFFECT -->
+      <div id="footer-brand-container" class="w-full text-center py-6 mb-16 select-none overflow-hidden cursor-default">
+        <span id="footer-brand-text" class="inline-block font-display font-black text-6xl sm:text-8xl md:text-[9.5rem] lg:text-[11.5rem] tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-[#EBEBEB] via-[#EBEBEB]/30 to-transparent leading-none transition-transform duration-200">
+          FrontendXLab
+        </span>
+      </div>
+
+      <!-- Footer Columns -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
+        <div class="col-span-2 md:col-span-1">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 rounded bg-[#141414] border border-white/20 flex items-center justify-center">
+              <svg class="w-3.5 h-3.5 text-[#EBEBEB]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 7l8-4 8 4v10l-8 4-8-4V7z"/></svg>
             </div>
-            <span class="font-bold text-base text-white tracking-tight">FrontendX<span class="text-cyan-400">Lab</span></span>
+            <span class="font-display font-bold text-sm text-[#EBEBEB]">FrontendXLab</span>
           </div>
-          <p class="text-slate-400 max-w-sm leading-relaxed mb-6">
-            Engineering laboratory crafting next-generation developer tooling, browser sandbox runtimes, and algorithmic preparation systems.
+          <p class="text-white/50 text-xs leading-relaxed mb-4">
+            Autonomous tooling, client execution environments, and algorithmic engines for modern engineers.
           </p>
-          <div class="flex items-center gap-3">
-            <a href="https://github.com/frontendxlab" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-colors" aria-label="FrontendXLab GitHub">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          <div class="flex items-center gap-2.5">
+            <a href="https://github.com/frontendxlab" target="_blank" rel="noopener noreferrer" class="p-1.5 text-white/50 hover:text-white transition-colors" aria-label="GitHub">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
             </a>
-            <a href="https://www.npmjs.com/org/frontendxlab" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-colors" aria-label="FrontendXLab npm Organization">
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0H1.763zM5.13 5.13h13.74v13.74h-3.435V8.565h-3.435v10.305H5.13V5.13z"/></svg>
+            <a href="https://www.npmjs.com/org/frontendxlab" target="_blank" rel="noopener noreferrer" class="p-1.5 text-white/50 hover:text-white transition-colors" aria-label="npm Organization">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0H1.763zM5.13 5.13h13.74v13.74h-3.435V8.565h-3.435v10.305H5.13V5.13z"/></svg>
             </a>
           </div>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 tracking-wide uppercase text-[11px]">Flagship</h4>
+          <h4 class="text-[#EBEBEB] font-semibold mb-3 tracking-wider uppercase text-[11px]">Flagship</h4>
           <ul class="space-y-2">
-            <li><a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">FrontendX</a></li>
-            <li><a href="https://learn-dsa.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Learn DSA</a></li>
-            <li><a href="https://cc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">CC Compiler</a></li>
-            <li><a href="https://chat.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Chat AI</a></li>
+            <li><a href="https://frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">FrontendX</a></li>
+            <li><a href="https://learn-dsa.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Learn DSA</a></li>
+            <li><a href="https://cc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">CC Platform</a></li>
+            <li><a href="https://chat.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Chat Assistant</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 tracking-wide uppercase text-[11px]">Developer Tools</h4>
+          <h4 class="text-[#EBEBEB] font-semibold mb-3 tracking-wider uppercase text-[11px]">Developer Tools</h4>
           <ul class="space-y-2">
-            <li><a href="https://opencode-annotate.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Visual Inspector</a></li>
-            <li><a href="https://opencode-computer-use.pages.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Computer Use</a></li>
-            <li><a href="https://webc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">WebC Runtime</a></li>
-            <li><a href="https://siteinfo.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">SiteInfo</a></li>
-            <li><a href="https://discovery-hub.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Discovery Hub</a></li>
+            <li><a href="https://webc.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">WebC Runtime</a></li>
+            <li><a href="https://opencode-annotate.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Visual Inspector</a></li>
+            <li><a href="https://opencode-computer-use.pages.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Computer Use</a></li>
+            <li><a href="https://siteinfo.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">SiteInfo</a></li>
+            <li><a href="https://discovery-hub.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Discovery Hub</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="text-white font-semibold mb-3 tracking-wide uppercase text-[11px]">Libraries</h4>
+          <h4 class="text-[#EBEBEB] font-semibold mb-3 tracking-wider uppercase text-[11px]">Libraries</h4>
           <ul class="space-y-2">
-            <li><a href="https://www.npmjs.com/package/@frontendxlab/dsa-js" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">@frontendxlab/dsa-js</a></li>
-            <li><a href="https://agent-ui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">@frontendxlab/agent-ui</a></li>
-            <li><a href="https://medicons.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">@frontendxlab/medicons</a></li>
-            <li><a href="https://gooui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">GooUI</a></li>
-            <li><a href="https://jdh.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">Jamia Hospital (JDH)</a></li>
-            <li><a href="https://nextjs.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">NextJS Variant</a></li>
+            <li><a href="https://www.npmjs.com/package/@frontendxlab/dsa-js" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@frontendxlab/dsa-js</a></li>
+            <li><a href="https://agent-ui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@frontendxlab/agent-ui</a></li>
+            <li><a href="https://medicons.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@frontendxlab/medicons</a></li>
+            <li><a href="https://gooui.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GooUI</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-[#EBEBEB] font-semibold mb-3 tracking-wider uppercase text-[11px]">Ecosystem</h4>
+          <ul class="space-y-2">
+            <li><a href="https://discovery-hub.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Discovery Hub</a></li>
+            <li><a href="https://nextjs.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">NextJS Variant</a></li>
+            <li><a href="https://jdh.frontendx.dev" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Jamia Hospital (JDH)</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-400">
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/50">
         <p>&copy; 2026 FrontendXLab. All rights reserved.</p>
-        <p class="text-slate-400">Built for frontend engineers crafting high-velocity web software.</p>
+        <p>Built for frontend engineers crafting high-performance web systems.</p>
       </div>
+
     </div>
   </footer>
 
+  <!-- ANIMATIONS & INTERACTIVE MOTION ENGINE (VANILLA JS) -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var els = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        var obs = new IntersectionObserver(function (entries, observer) {
+    (function () {
+      "use strict";
+      var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // 1. HERO CANVAS
+      var heroCanvas = document.getElementById("hero-particle-canvas");
+      if (heroCanvas && !prefersReducedMotion) {
+        var ctx = heroCanvas.getContext("2d");
+        var width = 0, height = 0;
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var mouse = { x: -9999, y: -9999, active: false };
+        var scrollY = window.pageYOffset || 0;
+
+        function resizeHero() {
+          var rect = heroCanvas.getBoundingClientRect();
+          width = rect.width;
+          height = rect.height;
+          heroCanvas.width = width * dpr;
+          heroCanvas.height = height * dpr;
+          ctx.scale(dpr, dpr);
+        }
+        window.addEventListener("resize", resizeHero);
+        resizeHero();
+
+        window.addEventListener("scroll", function () {
+          scrollY = window.pageYOffset || 0;
+        }, { passive: true });
+
+        heroCanvas.addEventListener("mousemove", function (e) {
+          var rect = heroCanvas.getBoundingClientRect();
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+          mouse.active = true;
+        });
+
+        heroCanvas.addEventListener("mouseleave", function () {
+          mouse.active = false;
+        });
+
+        var particles = [];
+        for (var i = 0; i < 220; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            radius: 0.8 + Math.random() * 1.4,
+            opacity: 0.15 + Math.random() * 0.45,
+            phase: Math.random() * Math.PI * 2
+          });
+        }
+
+        var fireflies = [];
+        for (var f = 0; f < 7; f++) {
+          fireflies.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            radius: 2.2 + Math.random() * 1.4,
+            pulseSpeed: 0.02 + Math.random() * 0.02,
+            phase: Math.random() * Math.PI * 2
+          });
+        }
+
+        function renderHeroParticles() {
+          ctx.clearRect(0, 0, width, height);
+          for (var p = 0; p < particles.length; p++) {
+            var pt = particles[p];
+            pt.phase += 0.015;
+            pt.x += pt.vx + Math.sin(pt.phase) * 0.15;
+            pt.y += pt.vy + Math.cos(pt.phase) * 0.15;
+            if (pt.x < -10) pt.x = width + 10;
+            if (pt.x > width + 10) pt.x = -10;
+            if (pt.y < -10) pt.y = height + 10;
+            if (pt.y > height + 10) pt.y = -10;
+
+            if (mouse.active) {
+              var dx = pt.x - mouse.x;
+              var dy = pt.y - mouse.y;
+              var dist = Math.sqrt(dx * dx + dy * dy);
+              if (dist < 110 && dist > 0) {
+                var force = (110 - dist) / 110;
+                pt.x += (dx / dist) * force * 5;
+                pt.y += (dy / dist) * force * 5;
+              }
+            }
+            var displayY = pt.y - scrollY * 0.15;
+            ctx.beginPath();
+            ctx.arc(pt.x, displayY, pt.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(235, 235, 235, " + pt.opacity + ")";
+            ctx.fill();
+          }
+
+          for (var ff = 0; ff < fireflies.length; ff++) {
+            var fly = fireflies[ff];
+            fly.phase += fly.pulseSpeed;
+            fly.x += fly.vx + Math.sin(fly.phase * 0.7) * 0.4;
+            fly.y += fly.vy + Math.cos(fly.phase * 0.7) * 0.4;
+            if (fly.x < -20) fly.x = width + 20;
+            if (fly.x > width + 20) fly.x = -20;
+            if (fly.y < -20) fly.y = height + 20;
+            if (fly.y > height + 20) fly.y = -20;
+
+            if (mouse.active) {
+              var fdx = fly.x - mouse.x;
+              var fdy = fly.y - mouse.y;
+              var fdist = Math.sqrt(fdx * fdx + fdy * fdy);
+              if (fdist < 130 && fdist > 0) {
+                var fforce = (130 - fdist) / 130;
+                fly.x += (fdx / fdist) * fforce * 6;
+                fly.y += (fdy / fdist) * fforce * 6;
+              }
+            }
+            var flyDisplayY = fly.y - scrollY * 0.2;
+            var currentOpacity = 0.35 + (Math.sin(fly.phase) + 1) * 0.3;
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(fly.x, flyDisplayY, fly.radius * 2.8, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255, 255, 255, " + (currentOpacity * 0.15) + ")";
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(fly.x, flyDisplayY, fly.radius, 0, Math.PI * 2);
+            ctx.fillStyle = "rgba(255, 255, 255, " + currentOpacity + ")";
+            ctx.shadowColor = "rgba(255, 255, 255, 0.8)";
+            ctx.shadowBlur = 8;
+            ctx.fill();
+            ctx.restore();
+          }
+          requestAnimationFrame(renderHeroParticles);
+        }
+        renderHeroParticles();
+      }
+
+      // 2. WORD-BY-WORD TEXT ILLUMINATION
+      var illuminateElements = document.querySelectorAll("[data-illuminate]");
+      illuminateElements.forEach(function (el) {
+        var text = el.textContent.trim();
+        var words = text.split(/\s+/);
+        el.textContent = "";
+        words.forEach(function (word, index) {
+          var span = document.createElement("span");
+          span.textContent = word + (index < words.length - 1 ? " " : "");
+          span.className = "illuminate-word";
+          span.style.transitionDelay = (index * 70) + "ms";
+          el.appendChild(span);
+        });
+
+        if ("IntersectionObserver" in window) {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                var spans = entry.target.querySelectorAll(".illuminate-word");
+                spans.forEach(function (s) { s.classList.add("is-lit"); });
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.15 });
+          observer.observe(el);
+        } else {
+          var spans = el.querySelectorAll(".illuminate-word");
+          spans.forEach(function (s) { s.classList.add("is-lit"); });
+        }
+      });
+
+      // 3. CARDS BUILD FROM BOTTOM
+      var buildCards = document.querySelectorAll("[data-build-card]");
+      if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        var cardObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
+              entry.target.classList.add("is-built");
+              cardObserver.unobserve(entry.target);
             }
           });
         }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-        els.forEach(function (el) { obs.observe(el); });
+
+        buildCards.forEach(function (card, idx) {
+          card.classList.add("build-card");
+          var siblingIndex = idx % 4;
+          card.style.transitionDelay = (siblingIndex * 90) + "ms";
+          cardObserver.observe(card);
+        });
       } else {
-        els.forEach(function (el) { el.classList.add("is-visible"); });
+        buildCards.forEach(function (card) { card.classList.add("is-built"); });
       }
-    });
+
+      // 4. STAT COUNTER ANIMATION
+      var counters = document.querySelectorAll("[data-counter]");
+      if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        var counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var targetVal = parseInt(el.getAttribute("data-counter"), 10) || 0;
+              var suffix = el.getAttribute("data-suffix") || "";
+              var duration = 1400;
+              var startTime = null;
+
+              function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var ease = (progress === 1) ? 1 : 1 - Math.pow(2, -10 * progress);
+                var current = Math.floor(ease * targetVal);
+                el.textContent = current + suffix;
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  el.textContent = targetVal + suffix;
+                }
+              }
+              requestAnimationFrame(step);
+              counterObserver.unobserve(el);
+            }
+          });
+        }, { threshold: 0.3 });
+        counters.forEach(function (c) { counterObserver.observe(c); });
+      }
+
+      // 5. REVEAL UTILITY
+      var revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && !prefersReducedMotion) {
+        var revObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+        revealEls.forEach(function (el) { revObserver.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+      }
+
+      // 6. FOOTER 3D TILT & ASCII CANVAS
+      var footerBrandContainer = document.getElementById("footer-brand-container");
+      var footerBrandText = document.getElementById("footer-brand-text");
+      if (footerBrandContainer && footerBrandText && !prefersReducedMotion) {
+        footerBrandContainer.addEventListener("mousemove", function (e) {
+          var rect = footerBrandContainer.getBoundingClientRect();
+          var x = (e.clientX - rect.left) / rect.width - 0.5;
+          var y = (e.clientY - rect.top) / rect.height - 0.5;
+          footerBrandText.style.transform = "perspective(800px) rotateX(" + (-y * 12).toFixed(2) + "deg) rotateY(" + (x * 16).toFixed(2) + "deg) translateZ(10px)";
+        });
+        footerBrandContainer.addEventListener("mouseleave", function () {
+          footerBrandText.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) translateZ(0px)";
+        });
+      }
+
+      var footerCanvas = document.getElementById("footer-particle-canvas");
+      if (footerCanvas && !prefersReducedMotion) {
+        var fctx = footerCanvas.getContext("2d");
+        var fwidth = 0, fheight = 0;
+        var fdpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        function resizeFooter() {
+          var rect = footerCanvas.getBoundingClientRect();
+          fwidth = rect.width;
+          fheight = rect.height;
+          footerCanvas.width = fwidth * fdpr;
+          footerCanvas.height = fheight * fdpr;
+          fctx.scale(fdpr, fdpr);
+        }
+        window.addEventListener("resize", resizeFooter);
+        resizeFooter();
+
+        var asciiChars = [".", ":", "+", "*", "-", "x", "~"];
+        var asciiParticles = [];
+        for (var a = 0; a < 60; a++) {
+          asciiParticles.push({
+            x: Math.random() * fwidth,
+            y: Math.random() * fheight,
+            speed: 0.3 + Math.random() * 0.6,
+            char: asciiChars[Math.floor(Math.random() * asciiChars.length)],
+            opacity: 0.08 + Math.random() * 0.22
+          });
+        }
+
+        function renderFooterAscii() {
+          fctx.clearRect(0, 0, fwidth, fheight);
+          fctx.font = "11px monospace";
+          for (var i = 0; i < asciiParticles.length; i++) {
+            var ap = asciiParticles[i];
+            ap.y -= ap.speed;
+            if (ap.y < -15) {
+              ap.y = fheight + 15;
+              ap.x = Math.random() * fwidth;
+            }
+            fctx.fillStyle = "rgba(235, 235, 235, " + ap.opacity + ")";
+            fctx.fillText(ap.char, ap.x, ap.y);
+          }
+          requestAnimationFrame(renderFooterAscii);
+        }
+        renderFooterAscii();
+      }
+    })();
   </script>
 </body>
 </html>
